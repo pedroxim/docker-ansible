@@ -1,0 +1,23 @@
+---
+common_packages_list:
+  - vim
+  - mlocate
+  - wget
+  - curl
+  - man
+  - htop
+  - atop
+  - rsync
+  - bind-utils
+  - openssl
+  - zip
+  - unzip
+  - sshpass
+  - openssh-clients
+  - telnet
+  - libselinux-python
+  - net-tools
+
+iptables_services:
+  - iptables
+  - ip6tables

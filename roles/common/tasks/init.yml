@@ -1,0 +1,12 @@
+---
+- name: "[RedHat] Upgrading all packages"
+  yum: name=* state=latest
+  when: ansible_pkg_mgr == "yum" and enable_upgrade == "yes"
+  tags:
+   - common
+
+- name: "[Debian] Upgrading all packages"
+  apt: upgrade=dist
+  when: ansible_pkg_mgr == "apt" and enable_upgrade == "yes"
+  tags:
+   - common

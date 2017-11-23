@@ -1,0 +1,22 @@
+---
+- name: Check if epel rpm is installed
+  command: rpm -q epel
+  register: rpm_check
+  failed_when: rpm_check.rc > 1
+  tags: epel
+
+- name: Delete the epel.repo file
+  file:
+    name: /etc/yum.repos.d/epel.repo
+    state: absent
+  when: rpm_check.stdout.find('is not installed') == -1
+  tags: epel
+
+- name: Add epel repository
+  yum_repository:
+    name: epel
+    description: EPEL YUM repo
+    baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+    gpgcheck: no
+  when: enabled_epel
+  tags: epel

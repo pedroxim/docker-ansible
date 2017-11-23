@@ -1,0 +1,3 @@
+###
+[dockerservers]
+mamamia ansible_user=root
