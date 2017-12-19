@@ -1,3 +1,7 @@
 ###
-[dockerservers]
+
+[nginx-docker]
 mamamia ansible_user=root
+
+#[dockerservers]
+#mamamia ansible_user=root

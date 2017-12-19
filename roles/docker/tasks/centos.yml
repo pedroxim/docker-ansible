@@ -8,6 +8,7 @@
     - docker-common
     - docker-selinux
     - docker-engine
+    - docker-python
   tags: docker-centos
 
 - name: Install required packages
